@@ -47,20 +47,6 @@ public class CreditTest
         Assert.Equal(expectedResult, actualResult);
     }
 
-    [Fact]
-    public void วงเงินสินเชื่อ_100_000_ใช้ไป_50_000_ขอใช้เพิ่ม_60_000_ผลการอนุมัติ_ไม่ผ่าน()
-    {
-        // Arrange
-        bool expectedResult = false;
-        ISAP sapStub = new SAPStub(100000, 50000);
-        Credit credit = new Credit(sapStub);
-
-        // Act
-        bool actualResult = credit.RequestForApproval("15329", 60000);
-
-        // Assert
-        Assert.Equal(expectedResult, actualResult);
-    }
 }
 
 public class SAPStub : ISAP // MOQ
